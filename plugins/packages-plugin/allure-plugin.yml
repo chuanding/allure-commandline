@@ -1,7 +1,8 @@
-id: packages
-name: Packages aggregator
-description: The aggregator adds packages tab to the report
+id: restfulapi-plugin
+name: Plugin name goes here
+description: More detailed explanation of what does this plugin do.
 extensions:
-  - io.qameta.allure.packages.PackagesPlugin
+  - com.restfulapi.plugin.HttpCodePlugin
 jsFiles:
+  - echarts.min.js
   - index.js
