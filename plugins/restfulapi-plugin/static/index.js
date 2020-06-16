@@ -99,6 +99,7 @@ const template = function (data) {
 	html += '		},';
 	html += '		tooltip: {';
 	html += '			trigger: \'item\',';
+	html += '			position: [\'50%\', \'50%\'],';
 	//html += "			 formatter: \'{a} <br/>{b} : {c} ({d}%)\'";
 	html += '			formatter: function (params, ticket, callback) {';
 	html += '			var str = params.seriesName;';
@@ -107,9 +108,14 @@ const template = function (data) {
 	html += '			str += ":";';
 	html += '			str += params.data.value;';
 	html += '			str += "("+params.percent+"%)<br/>";';
-	html += '			var map = \''+ JSON.stringify(data.items[0].attributes.step)+'\';';
-	html += '			var mapjson = JSON.parse(map);';
-	html += '			str += mapjson[params.data.name];';
+	//html += '			var map = \''+ JSON.stringify(data.items[0].attributes.step)+'\';';
+	html += '			var mapjson = '+ JSON.stringify(data.items[0].attributes.step)+';';
+	//html += '			var mapjson = JSON.parse(map);';
+	//html += '			var mapjson = '+ data.items[0].attributes.step +';';
+	html += '			var listname = mapjson[params.data.name];';
+	html += '			for(var i = 0;i<listname.length;i++){';
+	html += '				str += listname[i];';
+	html += '			};';
 	html += '			return str;';
 	html += '			}';
 	html += '	},';
