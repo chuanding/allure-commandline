@@ -105,9 +105,9 @@ const template = function (data) {
 	html += '			var str = params.seriesName;';
 	html += '			str += "<br/>";';
 	html += '			str += params.data.name;';
-	html += '			str += ":";';
+	html += '			str += "(";';
 	html += '			str += params.data.value;';
-	html += '			str += "("+params.percent+"%)<br/>";';
+	html += '			str += "/"+params.percent+"%)<br/>";';
 	//html += '			var map = \''+ JSON.stringify(data.items[0].attributes.step)+'\';';
 	html += '			var mapjson = '+ JSON.stringify(data.items[0].attributes.step)+';';
 	//html += '			var mapjson = JSON.parse(map);';
@@ -130,7 +130,7 @@ const template = function (data) {
 	html += '			type: \'pie\',';
 	html += '			radius: \'55%\',';
 	html += '			center: [\'50%\', \'60%\'],';
-	html += '			label:{formatter: \'{b} : {c} ({d}%)\'},';
+	html += '			label:{formatter: \'{b}({c}/{d}%)\'},';
 	html += '			data: ' + JSON.stringify(data.items[0].attributes.httpcode) + ',';
 	html += '		emphasis: {';
 	html += '			itemStyle: {';
